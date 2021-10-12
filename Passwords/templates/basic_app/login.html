@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %} {% block body_block %}
+
+<!-- <div class="position-absolute top-20 start-40"> -->
+<div class="container">
+  <h1>Please Log-in</h1>
+  <form method="POST" action="{% url 'basic_app:user_login' %}">
+    {% csrf_token %}
+    <label for="username">username: </label>
+    <input type="text" name="username" placeholder="username" />
+    <br />
+
+    <label for="password">password: </label>
+    <input type="password" name="password" placeholder="password" />
+
+    <input type="submit" value="Log-In" />
+  </form>
+</div>
+
+{% endblock %}
+
+<!-- Now, lets create a view for this and then add this to base.html file -->
